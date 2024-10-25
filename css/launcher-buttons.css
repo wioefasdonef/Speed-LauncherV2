@@ -18,6 +18,7 @@
   text-shadow: 0 0 .5em var(--glow-color);
   position: relative;
   transition: all 0.3s;
+  width: 300px;
   }
 
 .button-40::after {
@@ -46,4 +47,5 @@
   box-shadow: 0 0 0.6em .25em var(--glow-color),
         0 0 2.5em 2em var(--glow-spread-color),
         inset 0 0 .5em .25em var(--glow-color);
+  transform: scale(1.5)
 }
