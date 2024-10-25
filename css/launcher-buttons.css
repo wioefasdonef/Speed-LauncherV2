@@ -1,149 +1,49 @@
-.voltage-button {
+
+.button-40 {
+  --glow-color: rgb(217, 176, 255);
+  --glow-spread-color: rgba(191, 123, 255, 0.781);
+  --enhanced-glow-color: rgb(231, 206, 255);
+  --btn-color: rgb(100, 61, 136);
+  border: .25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+  text-shadow: 0 0 .5em var(--glow-color);
   position: relative;
-}
+  transition: all 0.3s;
+  }
 
-.voltage-button button {
-  color: white;
-  background: #0D1127;
-  padding: 1rem 3rem 1rem 3rem;
-  border-radius: 5rem;
-  border: 5px solid #5978F3;
-  font-size: 1.2rem;
-  line-height: 1em;
-  letter-spacing: 0.075em;
-  transition: background 0.3s;
-}
-
-.voltage-button button:hover {
-  cursor: pointer;
-  background: #0F1C53;
-}
-
-.voltage-button button:hover + svg, .voltage-button button:hover + svg + .dots {
-  opacity: 1;
-}
-
-.voltage-button svg {
-  display: block;
-  position: absolute;
-  top: -0.75em;
-  left: -0.25em;
-  width: calc(100% + 0.5em);
-  height: calc(100% + 1.5em);
+.button-40::after {
   pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s;
-  transition-delay: 0.1s;
-}
-
-.voltage-button svg path {
-  stroke-dasharray: 100;
-  filter: url("#glow");
-}
-
-.voltage-button svg path.line-1 {
-  stroke: #f6de8d;
-  stroke-dashoffset: 0;
-  animation: spark-1 3s linear infinite;
-}
-
-.voltage-button svg path.line-2 {
-  stroke: #6bfeff;
-  stroke-dashoffset: 500;
-  animation: spark-2 3s linear infinite;
-}
-
-.voltage-button .dots {
-  opacity: 0;
-  transition: opacity 0.3s;
-  transition-delay: 0.4s;
-}
-
-.voltage-button .dots .dot {
-  width: 1rem;
-  height: 1rem;
-  background: white;
-  border-radius: 100%;
+  content: "";
   position: absolute;
-  opacity: 0;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: .7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
 }
 
-.voltage-button .dots .dot-1 {
-  top: 0;
-  left: 20%;
-  animation: fly-up 3s linear infinite;
+.button-40:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
 }
 
-.voltage-button .dots .dot-2 {
-  top: 0;
-  left: 55%;
-  animation: fly-up 3s linear infinite;
-  animation-delay: 0.5s;
-}
-
-.voltage-button .dots .dot-3 {
-  top: 0;
-  left: 80%;
-  animation: fly-up 3s linear infinite;
-  animation-delay: 1s;
-}
-
-.voltage-button .dots .dot-4 {
-  bottom: 0;
-  left: 30%;
-  animation: fly-down 3s linear infinite;
-  animation-delay: 2.5s;
-}
-
-.voltage-button .dots .dot-5 {
-  bottom: 0;
-  left: 65%;
-  animation: fly-down 3s linear infinite;
-  animation-delay: 1.5s;
-}
-
-@keyframes spark-1 {
-  to {
-    stroke-dashoffset: -1000;
-  }
-}
-
-@keyframes spark-2 {
-  to {
-    stroke-dashoffset: -500;
-  }
-}
-
-@keyframes fly-up {
-  0% {
-    opacity: 0;
-    transform: translateY(0) scale(0.2);
-  }
-
-  5% {
-    opacity: 1;
-    transform: translateY(-1.5rem) scale(0.4);
-  }
-
-  10%, 100% {
-    opacity: 0;
-    transform: translateY(-3rem) scale(0.2);
-  }
-}
-
-@keyframes fly-down {
-  0% {
-    opacity: 0;
-    transform: translateY(0) scale(0.2);
-  }
-
-  5% {
-    opacity: 1;
-    transform: translateY(1.5rem) scale(0.4);
-  }
-
-  10%, 100% {
-    opacity: 0;
-    transform: translateY(3rem) scale(0.2);
-  }
+.button-40:active {
+  box-shadow: 0 0 0.6em .25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 .5em .25em var(--glow-color);
 }
