@@ -1,3 +1,10 @@
+
+body {
+  background-image: url('Images/backgrounds/1.gif')
+}
+
+
+
 .button-container {
   display: flex;
   flex-flow: column nowrap;
